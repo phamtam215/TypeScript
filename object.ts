@@ -39,3 +39,24 @@ let user2: User = {
 
 console.log('user2: ', user2);
 
+// COMBINE TYPE
+type cardNumber = {
+  cardNumber: number
+}
+
+type cardDate = {
+  cardDate: number
+}
+// type này sẽ combination của 2 type ở trên cùng với 1 type có 
+// chứa cvv number
+type cardDetail = cardNumber & cardDate & { cvv: number };
+
+let card1: cardDetail = {
+  cardNumber: 5,
+  cardDate: 6,
+  cvv: 7
+}
+
+console.log('card1: ', card1);
+
+
